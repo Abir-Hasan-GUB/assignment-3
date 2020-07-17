@@ -14,7 +14,7 @@ function feetToMile(distance) {
 var feet = 5897;
 var mile = feetToMile(feet).toFixed(5); // call function for convert
 if (feet >= 0) {
-    console.log(feet + " Feet = " + mile + " Mile. \n");
+    console.log(feet + " Feet = " + mile + " Mile. \n");//output
 }
 
 
@@ -34,11 +34,12 @@ function woodCalculator(chair, table, bed) {
     return totalAmountOfWood;
 }
 
+// user input:
 var chair = 6;
 var table = 2;
 var bed = 3;
 var totalAmountOfWood = woodCalculator(chair, table, bed);//call function for calculate total wood.
-console.log("Total wood in cubic feet: " + totalAmountOfWood + "\n");
+console.log("Total wood in cubic feet: " + totalAmountOfWood + "\n");//output
 
 
 // ******* Problem 03: Brick Calculator ******* 
@@ -76,10 +77,31 @@ function brickCalculator(floor) {
     }
 }
 
+// user input:
 var floor = 31;
 var totalAmountOfBrick = brickCalculator(floor);// Call function for calculate brick
+
 if (totalAmountOfBrick <= 0) {
     console.log("Floor Must Be Start With minimum 1 ...\n");
 } else {
-    console.log("Total Amount of Brick: " + totalAmountOfBrick + "\n");
+    console.log("Total Amount of Brick: " + totalAmountOfBrick + "\n");//output
 }
+
+
+// ******* Problem 04: Find Tiny Friend ******* 
+
+function tinyFriend(friends) {
+    var len = friends.length; //length of array index
+    var tinyName = friends[0];
+    for (var i = 0; i < len; i++) {
+        if (friends[i].length < tinyName.length) { // find name of minimum length
+            tinyName = friends[i]; // replace with pre-set value.
+        }
+    }
+    return tinyName;
+}
+
+// user input:
+var name = ["Nahid", "Ashraful", "Mohammad", "Abir", "Momin Khan", "Nazmul Ali"];
+var tinyName = tinyFriend(name); // call funtion for find tiny name
+console.log("Tiny Friend Name: " + tinyName + "\n"); //output
