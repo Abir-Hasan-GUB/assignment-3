@@ -105,7 +105,10 @@ function tinyFriend(friends) {
     var len = friends.length; //length of array index
     if (len == 0) { // check array is empty or not
         return -1;
-    } else {
+    } else if (len == 1) { // check for only one name
+        return 1;
+    }
+    else {
         var tinyName = friends[0];
         for (var i = 0; i < len; i++) {
             if (friends[i].length < tinyName.length) { // find name of minimum length
@@ -122,6 +125,9 @@ var tinyName = tinyFriend(name); // call funtion for find tiny name
 
 if (tinyName < 0) {// check empty array
     console.log("Name or Array can not be empty.\n");
-} else {
+} else if (tinyName == 1) { // check if only one name
+    console.log("There is nothing to compare so given name is Tiny Name.\n");
+}
+else {
     console.log("Tiny Friend Name: " + tinyName + "\n"); //output
 }
